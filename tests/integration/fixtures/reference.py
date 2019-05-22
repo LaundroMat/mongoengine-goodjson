@@ -76,3 +76,37 @@ class Reference(Dictable, gj.Document):
                 for ct in range(3)
             ]
         )
+
+    
+class DynamicReference(Dictable, gj.DynamicDocument):
+    """Test schema."""
+
+    name = db.StringField()
+    ex_info = db.EmbeddedDocumentField(ExtraInformation)
+    ex_ref = db.ReferenceField(ExtraReference)
+    ex_refs = db.ListField(db.ReferenceField(ExtraReference))
+    references = db.ListField(db.ReferenceField(Article))
+
+    @classmethod
+    def generate_test_data(cls, user=None, article=None, additional_suffix=""):
+        """Generate test data."""
+        return cls(
+            pk=ObjectId(), name="test", references=[
+                article or Article.generate_test_data(
+                    user=user or User.generate_test_data(
+                        additional_suffix=additional_suffix
+                    ),
+                    additional_suffix=additional_suffix
+                )
+            ],
+            ex_info=ExtraInformation.generate_test_data(additional_suffix),
+            ex_ref=ExtraReference.generate_test_data(additional_suffix),
+            ex_refs=[
+                ExtraReference.generate_test_data(
+                    additional_suffix=("{}{}").format(additional_suffix, ct)
+                )
+                for ct in range(3)
+            ]
+        )
+
+    
