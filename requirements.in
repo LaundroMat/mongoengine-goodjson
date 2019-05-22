@@ -1,7 +1,9 @@
 coverage
+python-dateutil
 flake8
 flake8-docstrings
 mongoengine
+mongomock
 radon
 tox
 pip-tools
