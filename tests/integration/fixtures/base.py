@@ -9,7 +9,7 @@ try:
     from functools import singledispatch
 except ImportError:
     from singledispatch import singledispatch  # noqa
-from mongoengine import Document, EmbeddedDocument
+from mongoengine import Document, EmbeddedDocument, DynamicDocument
 from uuid import UUID
 from bson import ObjectId, Binary
 from six import text_type
@@ -50,6 +50,10 @@ class Dictable(object):
                 )
         else:
             @to_primitive.register(Document)
+            def return_reference_id(value):
+                return to_primitive(value.id)
+
+            @to_primitive.register(DynamicDocument)
             def return_reference_id(value):
                 return to_primitive(value.id)
 
