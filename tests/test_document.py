@@ -87,6 +87,7 @@ class ToJSONTest(TestCase):
             dumps.assert_called_once_with(
                 _model.to_mongo(True), cls=GoodJSONEncoder
             )
+            dumps.reset_mock()
 
     def test_followreference(self):
         """self.references.to_json should be called 3 times for each."""
@@ -145,4 +146,4 @@ class FromJSONTest(TestCase):
         for _model_cls in self.model_classes:
             _model_cls.from_json(self.data)
             hook_mock.assert_called_once_with(_model_cls)
-
+            hook_mock.reset_mock()
