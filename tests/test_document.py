@@ -17,16 +17,20 @@ except ImportError:
 
 
 class DocumentInhertCheck(TestCase):
-    """Document and EmbeddedDocument should inhert Helper."""
+    """Document, EmbeddedDocument and DynamicDocument should inhert Helper."""
 
     def test_document(self):
-        """Document should inhert Helper."""
+        """Document should inherit Helper."""
         self.assertTrue(issubclass(Document, Helper))
 
     def test_emb_document(self):
-        """Embedded Document should inhert Helper."""
+        """Embedded Document should inherit Helper."""
         self.assertTrue(issubclass(EmbeddedDocument, Helper))
 
+    def test_dynamic_document(self):
+        """Dynamic Document should inherit Helper."""
+        self.assertTrue(issubclass(DynamicDocument, Helper))
+        
 
 class ToJSONTest(TestCase):
     """Good JSON Encoder invocation test."""
