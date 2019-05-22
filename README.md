@@ -115,8 +115,8 @@ def get_user(self):
 
 ## How to use it
 
-Generally you can define the document as usual, but you might want to inherits
-`mongoengine_goodjson.Document` or `mongoengine_goodjson.EmbeddedDocument`.
+Generally you can define the document as usual, but you might want to inherit
+`mongoengine_goodjson.Document`, `mongoengine_goodjson.DynamicDocument` or `mongoengine_goodjson.EmbeddedDocument`.
 
 Here is the example:
 
