@@ -9,8 +9,8 @@ from bson import ObjectId
 import mongoengine_goodjson as gj
 import mongoengine as db
 
-from ...fixtures.base import Dictable
-from ....con_base import DBConBase
+from tests.integration.fixtures.base import Dictable
+from tests.con_base import DBConBase
 
 
 class FollowReferenceFieldListRecursionTest(DBConBase):

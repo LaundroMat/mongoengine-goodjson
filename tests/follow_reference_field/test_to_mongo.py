@@ -15,7 +15,7 @@ from bson import DBRef, ObjectId, SON
 from .schema import (
     DisabledIDCheckDocument, IDCheckDocument, ReferencedDocument
 )
-from ..con_base import DBConBase
+from tests.con_base import DBConBase
 
 
 class FollowReferenceFieldIDCheckTest(TestCase):

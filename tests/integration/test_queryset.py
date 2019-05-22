@@ -8,9 +8,9 @@ import json
 import mongoengine_goodjson as gj
 import mongoengine as db
 
-from .fixtures.base import Dictable
-from .fixtures.user import User, UserReferenceNoAutoSave
-from ..con_base import DBConBase
+from tests.integration.fixtures.base import Dictable
+from tests.integration.fixtures.user import User, UserReferenceNoAutoSave
+from tests.con_base import DBConBase
 
 
 # class EmptyEuqeyTest(DBConBase):

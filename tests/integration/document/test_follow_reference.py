@@ -14,8 +14,8 @@ except ImportError:
 import mongoengine as db
 import mongoengine_goodjson as gj
 
-from ..fixtures.reference import Reference
-from ...con_base import DBConBase
+from tests.integration.fixtures.reference import Reference
+from tests.con_base import DBConBase
 
 
 class FollowReferenceTest(DBConBase):

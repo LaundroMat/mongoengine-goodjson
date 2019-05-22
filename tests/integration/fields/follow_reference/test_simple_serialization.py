@@ -7,11 +7,11 @@ import json
 
 from bson import ObjectId
 
-from ...fixtures.user import (
+from tests.integration.fixtures.user import (
     User, UserReferenceAutoSave, UserReferenceNoAutoSave,
     UserReferenceDisabledIDCheck
 )
-from ....con_base import DBConBase
+from tests.con_base import DBConBase
 
 
 class FollowReferenceFieldTest(DBConBase):

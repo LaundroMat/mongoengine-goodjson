@@ -10,8 +10,8 @@ from bson import ObjectId
 import mongoengine_goodjson as gj
 import mongoengine as db
 
-from ...con_base import DBConBase
-from ..fixtures.base import Dictable
+from tests.con_base import DBConBase
+from tests.integration.fixtures.base import Dictable
 
 
 class JSONExclusionTest(DBConBase):

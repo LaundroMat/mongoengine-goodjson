@@ -13,7 +13,7 @@ except ImportError:
 import mongoengine_goodjson as gj
 import mongoengine as db
 
-from ....con_base import DBConBase
+from tests.con_base import DBConBase
 
 
 class CallableRecursionTest(DBConBase):

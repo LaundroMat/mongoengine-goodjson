@@ -5,8 +5,8 @@
 
 import json
 
-from ..fixtures.email import Email
-from ...con_base import DBConBase
+from tests.integration.fixtures.email import Email
+from tests.con_base import DBConBase
 
 
 class PrimaryKeyNotOidTest(DBConBase):

@@ -8,9 +8,9 @@ from collections import OrderedDict
 import json
 from six import text_type
 
-from ..fixtures.articles import Article
-from ..fixtures.user import User
-from ...con_base import DBConBase
+from tests.integration.fixtures.articles import Article
+from tests.integration.fixtures.user import User
+from tests.con_base import DBConBase
 
 
 class NormalDocumentTest(DBConBase):

@@ -3,13 +3,13 @@
 
 """Follow Refernce Field Test."""
 
-from ....con_base import DBConBase as TestCase
+from tests.con_base import DBConBase as TestCase
 
 from bson import ObjectId
 import mongoengine as db
 import mongoengine_goodjson as gj
 
-from ...fixtures.base import Dictable
+from tests.integration.fixtures.base import Dictable
 
 
 class FollowReferenceFieldLoadTest(TestCase):
