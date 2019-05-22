@@ -301,7 +301,7 @@ class EmbeddedDocument(Helper, db.EmbeddedDocument):
 
 
 class DynamicDocument(Helper, db.DynamicDocument):
-    """EmbeddedDocument implementing human-readable JSON serializer."""
+    """DynamicDocument implementing human-readable JSON serializer."""
 
     meta = {
         "abstract": True,
