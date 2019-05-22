@@ -75,3 +75,29 @@ class Article(Dictable, gj.Document):
             uuid=uuid5(NAMESPACE_DNS, "This is a test"),
             addition=ArticleMetaData.generate_test_data(additional_suffix)
         )
+
+    
+class DynamicArticle(Dictable, gj.DynamicDocument):
+    """Test schema."""
+
+    user = db.ReferenceField(User)
+    addition = db.EmbeddedDocumentField(ArticleMetaData)
+    title = db.StringField()
+    date = db.DateTimeField()
+    body = db.BinaryField()
+    uuid = db.UUIDField()
+
+    @classmethod
+    def generate_test_data(cls, user=None, additional_suffix=""):
+        """Generate test data."""
+        return cls(
+            pk=ObjectId(),
+            user=user or User.generate_test_data(additional_suffix),
+            title=("Test Tile{}").format(
+                (" {}").format(additional_suffix) if additional_suffix else ""
+            ),
+            date=now - timedelta(microseconds=now.microsecond % 1000),
+            body=Binary(b"\x00\x01\x02\x03\x04"),
+            uuid=uuid5(NAMESPACE_DNS, "This is a test"),
+            addition=ArticleMetaData.generate_test_data(additional_suffix)
+        )
